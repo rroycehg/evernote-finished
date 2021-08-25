@@ -1,11 +1,12 @@
 import React from "react";
 import NoteItem from "./NoteItem";
 
-function NoteList() {
+function NoteList(props) {
+  const notesList = props.notes.map(note => <NoteItem key={note.id} note={note} noteClick={props.noteClick}/> )
   return (
     <ul>
-      {/* Render list of notes here... */}
-      <NoteItem />
+      {notesList}
+    
     </ul>
   );
 }
